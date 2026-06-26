@@ -1,38 +1,122 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff;
+  color: #222;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  padding: 40px 20px;
+}
+
+.card {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 16px;
+  background: #fff;
+  border-radius: 24px;
+  padding: 32px 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 600px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin: 0;
+  color: #111;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1 span {
+  color: #B8860B;
+}
+
+.dice-value {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #B8860B;
+  line-height: 1;
+  margin: 0;
+}
+
+.roll-btn {
+  padding: 10px 32px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: #fff;
+  color: #B8860B;
+  border: 1.5px solid #B8860B;
+  border-radius: 10px;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: background 0.15s, color 0.15s, transform 0.1s;
+}
+
+.roll-btn:hover { background: #B8860B; color: #fff; transform: translateY(-1px); }
+.roll-btn:active { transform: scale(0.97); }
+
+.history {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: #fafafa;
+  border: 1px solid #ebebeb;
+  border-radius: 16px;
+  padding: 20px 24px;
+  width: 100%;
+}
+
+.history-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #bbb;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.history-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.history-chip {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 5px 12px;
+  font-size: 0.85rem;
+  color: #555;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Le dernier lancer mis en avant */
+.history-chip:first-child {
+  background: #B8860B;
+  border-color: #B8860B;
+  color: #fff;
+  font-weight: 700;
 }
+
+.reset-btn {
+  align-self: center;
+  padding: 0;
+  font-size: 0.8rem;
+  background: transparent;
+  color: #ccc;
+  border: none;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.reset-btn:hover { color: #B8860B; }
